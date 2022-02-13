@@ -16,14 +16,14 @@ app.config['SESSION_COOKIE_NAME'] = "75jhbkdaCooKiebMONsteRRs!7)^&hbsh$4)"
 def index():
     session["all_courses"], session["checklist_courses"] = get_db()
     return render_template('index.html', all_courses=session["all_courses"], 
-                            checklist_names=session["checklist_courses"])
+                            checklist_courses=session["checklist_courses"])
 
 
 @app.route('/add_class', methods=['POST'])
 def add_class():
     session["checklist_courses"].append(request.form["select_courses"])
     return render_template('index.html', all_courses=session["all_courses"], 
-                            checklist_names=session["checklist_courses"])
+                            checklist_courses=session["checklist_courses"])
 
 
 @app.route('/remove_class', methods=['POST'])
@@ -37,7 +37,7 @@ def remove_class():
             session.modified = True
 
     return render_template('index.html', all_courses=session["all_courses"], 
-                            checklist_names=session["checklist_courses"])
+                            checklist_courses=session["checklist_courses"])
 
 
 def get_db():

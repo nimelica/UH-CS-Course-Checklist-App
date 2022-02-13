@@ -41,14 +41,14 @@ label {
     font-weight: bold;
     border-radius: 20px;
     border: 2px solid white;
-    margin: 10px;
+    margin: 16px;
     padding: 10px 15px;
     cursor: pointer;
 }
 
 select {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 0.85em;
+    font-size: 0.5em;
     text-align: center;
     width: 200px;
     margin: 50px 10px;
