@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UH CS COURSE REQUIREMENTS</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    </head>
+    <body>
+        <!--LOGO-->
+        <div>
+            <image src="https://cdn.worldvectorlogo.com/logos/university-of-houston-1.svg" 
+                        class = "logo"></image>
+        </div>
+        <!--COUGAR MASCOT ICON-->
+        <div>
+            <image src="https://i.pinimg.com/originals/5d/b7/80/5db78022283707ba21f34f21c9f8ca0e.jpg" class="mascot"></image><br>
+        </div>
+        <!--REMOVE A COURSE-->
+        <div id="remove_class">
+            <!--remove_class route operation form-->
+            <form action="/remove_class" method="POST">
+                {% for course in checklist_courses %}
+                  <input type="checkbox" name="check" id="{{course}}" value="{{course}}">
+                  <label for ="{{course}}" name="{{course}}">{{course}}</label><br>
+                {% endfor %}
+                <input type="submit" value="REMOVE CLASS" id="remove_button">
+            </form>
+        </div>
+        <!--ADD A NEW COURSE-->
+        <div id="add_class">
+            <!--add_class route operation form-->
+            <form action="/add_class" method="POST">
+                <select name="select_courses">
+                    {% for course in all_courses %}
+                       <option value="{{course}}">{{course}}</option>
+                    {% endfor %}
+                    <input type="submit" value="ADD CLASS" id="add_button">
+                </select>
+            </form>
+        </div>
+    </body>
+</html>
