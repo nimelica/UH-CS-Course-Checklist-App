@@ -24,7 +24,7 @@
                 <input type="checkbox" id="{{course}}" name="check" value="{{course}}">
                 <label for="{{course}}" name="{{course}}">{{course}}</label><br>
                 {% endfor %}
-                <input type="submit" value="REMOVE CLASS" id="remove_button">
+                <input type="submit" value="ALREADY TOOK IT" id="remove_button">
             </form>
         </div>
         <!--ADD A NEW COURSE-->
@@ -35,7 +35,7 @@
                     {% for course in all_courses %}
                        <option value="{{course}}">{{course}}</option>
                     {% endfor %}
-                    <input type="submit" value="ADD CLASS" id="add_button">
+                    <input type="submit" value="NEED TO TAKE" id="add_button">
                 </select>
             </form>
         </div>
